@@ -96,7 +96,7 @@ def get_row(line_contents, column_names):
             line_contents,
             column_name,
         )
-        if isinstance(line_value, unicode):
+        if isinstance(line_value):
             row.append('{0}'.format(line_value.encode('utf-8')))
         elif line_value is not None:
             row.append('{0}'.format(line_value))
@@ -123,8 +123,7 @@ if __name__ == '__main__':
     json_file = '{0}{1}{2}'.format(folder_json, file_review, ext_json)
     csv_file = '{0}{1}{2}'.format(folder_csv, file_review, ext_csv)
 
-    print '{0} -> {1}'.format(json_file, csv_file)
+    print ('{0} -> {1}'.format(json_file, csv_file))
     column_names = get_superset_of_column_names_from_file(json_file)
     read_and_write_file(json_file, csv_file, column_names)
 
-    

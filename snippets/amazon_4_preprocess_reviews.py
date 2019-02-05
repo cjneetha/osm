@@ -41,8 +41,9 @@ def preprocess(folder, n_jobs=3, batch_size=12):
     print("{0} - Reading files......".format(str(datetime.now())))
 
     dfs = np.array_split(summary, batch_size)
-    Parallel(n_jobs=n_jobs)(delayed(transform_texts)("en", folder, batch)
-                            for i, batch in enumerate(dfs))
+    # Parallel(n_jobs=n_jobs)(delayed(transform_texts)("en", folder, batch) for i, batch in enumerate(dfs))
+    for i, batch in enumerate(dfs):
+        transform_texts("en", folder, batch)
 
 
 def transform_texts(lang, folder, batch):
@@ -101,8 +102,7 @@ def transform_texts(lang, folder, batch):
 
         corpus = Corpus(lang=lang,
                         texts=list(data[cols.TEXT]),
-                        metadatas=data[[cols.DATE, cols.REVIEW_ID, cols.CATEGORY, cols.STARS]].to_dict(
-                            orient='records'))
+                        metadatas=data[[cols.DATE, cols.REVIEW_ID, cols.CATEGORY, cols.STARS]].to_dict(orient='records'))
 
         print("{0} - Corpus created: {1}".format(str(datetime.now()), str(batch_id)))
 
@@ -150,3 +150,9 @@ def transform_texts(lang, folder, batch):
 
 if __name__ == '__main__':
     plac.call(main)
+
+
+
+
+
+##### if new product  - create a new data frame

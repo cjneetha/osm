@@ -50,30 +50,30 @@ if __name__ == '__main__':
 
     # ------------------------ read the review file --------------------
     print("Converting Beauty dataset")
-    convert_to_pkl("reviews_Beauty_5", 'beauty')
+    #convert_to_pkl("reviews_Beauty_5", 'beauty')
 
     print("Converting cell phones and accessories dataset")
-    convert_to_pkl("reviews_Cell_Phones_and_Accessories_5", 'cell phones and accessories')
+    #convert_to_pkl("reviews_Cell_Phones_and_Accessories_5", 'cell phones and accessories')
 
     print("Converting clothing, shoes and jewelry dataset")
     convert_to_pkl("reviews_Clothing_Shoes_and_Jewelry_5", 'clothing, shoes and jewelry')
 
     print("Converting electronics dataset")
-    convert_to_pkl("reviews_Electronics_5", 'electronics')
+    #convert_to_pkl("reviews_Electronics_5", 'electronics')
 
     print("Converting homes and kitchen dataset")
-    convert_to_pkl("reviews_Home_and_Kitchen_5", 'home and kitchen')
+    #convert_to_pkl("reviews_Home_and_Kitchen_5", 'home and kitchen')
 
     print("Converting apps for android dataset")
-    convert_to_pkl("reviews_Apps_for_Android_5", 'apps for android')
+    #convert_to_pkl("reviews_Apps_for_Android_5", 'apps for android')
 
     print("Converting cds and vinyls dataset")
-    convert_to_pkl("reviews_CDs_and_Vinyl_5", 'cds and vinyl')
+    #convert_to_pkl("reviews_CDs_and_Vinyl_5", 'cds and vinyl')
 
     print("Converting health and personal care dataset")
-    convert_to_pkl("reviews_Health_and_Personal_Care_5", 'health and personal care')
+    #convert_to_pkl("reviews_Health_and_Personal_Care_5", 'health and personal care')
 
     print("Converting kindle store dataset")
-    convert_to_pkl("reviews_Kindle_Store_5", 'kindle store')
+    #convert_to_pkl("reviews_Kindle_Store_5", 'kindle store')
 
 

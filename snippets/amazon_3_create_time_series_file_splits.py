@@ -29,7 +29,7 @@ def create_time_series_file_splits(df_grouped, output_folder):
         group.set_index([cols.DATE, cols.REVIEW_ID], inplace=True)
 
         # write data
-        LOGGER.debug("Writing file: " + filename)
+        #LOGGER.debug("Writing file: " + filename)
         group.to_pickle(os.path.join(output_folder, filename))
 
     return files
@@ -49,20 +49,20 @@ if __name__ == '__main__':
     """
 
     # get the logger
-    LOGGER = get_logger("amazon_create_time_series_file_splits.out")
+    #LOGGER = get_logger("amazon_create_time_series_file_splits.out")
 
     # ------------------------ read the review file --------------------
-    LOGGER.debug("Reading the review file.......")
+    #LOGGER.debug("Reading the review file.......")
     reviews = pd.read_pickle(paths.PKL_FILE_REVIEW_FILTERED)
 
-    LOGGER.debug("Resetting the index...........")
+    #LOGGER.debug("Resetting the index...........")
     reviews.reset_index(drop=False, inplace=True)
 
-    LOGGER.debug("Setting date index............")
+    #LOGGER.debug("Setting date index............")
     reviews.set_index(cols.DATE, inplace=True)
 
     # ------------------------ create weekly files --------------------
-    LOGGER.debug("Creating weekly files.........")
+    #LOGGER.debug("Creating weekly files.........")
 
     # create a weekly grouper
     weekly_reviews = reviews.groupby(pd.Grouper(freq='W'))
@@ -73,5 +73,5 @@ if __name__ == '__main__':
     # store the metadata
     store_metadata(metadata, paths.FILE_REVIEWS_WEEKLY_SUMMARY)
 
-    LOGGER.debug("Weekly files created successfully")
+    #LOGGER.debug("Weekly files created successfully")
 
